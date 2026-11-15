@@ -3,586 +3,406 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>وال | فروشگاه قهوه و ملزومات باریستا</title>
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>فروشگاه وال | VAL</title>
 <style>
-:root {
-  --primary:#2d5a3f;
-  --dark:#1b3827;
-  --bg:#f9f8f5;
-  --text:#222521;
-  --muted:#6e726b;
-  --border:#e6e8e3;
-  --accent:#c49a45;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:Tahoma,Arial,sans-serif;
-  line-height:1.8;
-}
-a{text-decoration:none;color:inherit}
-.container{
-  width:min(1180px,calc(100% - 32px));
-  margin:auto;
-}
-header{
-  position:sticky;top:0;z-index:100;
-  background:#ffffffef;
-  border-bottom:1px solid var(--border);
-}
-.nav-wrap{
-  display:flex;align-items:center;
-  justify-content:space-between;
-  min-height:75px;gap:15px;
-}
-.logo{
-  font-size:27px;font-weight:900;
-  color:var(--primary);
-}
-.logo span{
-  display:block;font-size:12px;
-  color:var(--accent);
-}
-nav{
-  display:flex;gap:16px;
-  overflow-x:auto;white-space:nowrap;
-  font-size:13px;font-weight:bold;
-  padding:8px 0;
-}
-nav a:hover{color:var(--primary)}
-.hero{
-  background:linear-gradient(135deg,var(--dark),var(--primary));
-  color:white;text-align:center;
-  padding:65px 15px;
-}
-.hero h1{font-size:30px;margin-bottom:12px}
-.hero p{color:#d8e5dc}
-section{
-  padding:55px 0 20px;
-  scroll-margin-top:85px;
-}
-.section-title{
-  border-right:4px solid var(--primary);
-  padding-right:12px;margin-bottom:25px;
-}
-.section-title h2{
-  color:var(--dark);font-size:23px;
-}
-.section-title p{
-  color:var(--muted);font-size:14px;
-}
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
-  gap:20px;
-}
-.card{
-  background:white;
-  border:1px solid var(--border);
-  border-radius:16px;overflow:hidden;
-  display:flex;flex-direction:column;
-  box-shadow:0 4px 15px #00000008;
-}
-.card-img{
-  height:190px;background:#eef1ed;
-  display:flex;align-items:center;
-  justify-content:center;overflow:hidden;
-}
-.card-img img{
-  width:100%;height:100%;object-fit:cover;
-}
-.placeholder-text{
-  color:var(--muted);
-  border:2px dashed #ccd3c9;
-  padding:15px;border-radius:8px;
-}
-.card-content{
-  padding:17px;display:flex;
-  flex-direction:column;flex:1;
-}
-.card-title{font-size:17px;margin-bottom:8px}
-.card-desc{
-  color:var(--muted);font-size:13px;
-  margin-bottom:15px;flex:1;
-}
-.card-price{
-  color:var(--primary);
-  font-size:16px;font-weight:bold;
-  border-top:1px dashed var(--border);
-  padding-top:10px;
-}
-.add-cart-btn{
-  background:var(--primary);
-  color:white;border:0;
-  padding:12px;border-radius:9px;
-  width:100%;margin-top:12px;
-  font-size:14px;font-weight:bold;
-  cursor:pointer;
-}
-.add-cart-btn:hover{background:var(--dark)}
-.cart-section{
-  background:white;
-  border:2px solid var(--primary);
-  border-radius:16px;
-  padding:20px;margin:50px 0;
-}
-.cart-section h2{
-  color:var(--dark);margin-bottom:15px;
-}
-.cart-item{
-  display:flex;justify-content:space-between;
-  align-items:center;gap:10px;
-  padding:13px 0;
-  border-bottom:1px solid var(--border);
-}
-.cart-item button{
-  border:0;border-radius:6px;
-  padding:6px 11px;
-  color:white;background:var(--primary);
-  cursor:pointer;margin:2px;
-}
-.cart-item .delete-btn{background:#a83232}
-.cart-total{
-  color:var(--primary);
-  font-size:19px;font-weight:bold;
-  margin-top:20px;
-}
-.cart-count{
-  color:var(--accent);
-  font-weight:bold;
-}
-.whatsapp-order{
-  display:block;text-align:center;
-  background:#25D366;color:white;
-  padding:14px;border-radius:10px;
-  font-weight:bold;margin-top:20px;
-  cursor:pointer;border:0;width:100%;
-  font-size:16px;
-}
-.whatsapp-order:hover{background:#1da851}
-.contact-section{
-  background:#f0eee8;
-  margin-top:50px;padding:55px 0;
-}
-.contact-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:18px;
-}
-.contact-card{
-  background:white;padding:22px;
-  border-radius:14px;
-  border:1px solid var(--border);
-}
-.contact-card h3{
-  color:var(--primary);margin-bottom:10px;
-}
-.insta-link{
-  direction:ltr;display:inline-block;
-  color:#d62976;font-weight:bold;
-}
-footer{
-  background:var(--dark);color:white;
-  text-align:center;padding:20px;
-  font-size:13px;
-}
-@media(max-width:600px){
-  .nav-wrap{align-items:flex-start;flex-direction:column;padding:10px 0}
-  nav{width:100%}
-  .hero h1{font-size:23px}
-  .cart-item{flex-direction:column;align-items:flex-start}
-}
+*{box-sizing:border-box}
+body{margin:0;font-family:Tahoma,Arial;background:#f6f7f1;color:#203b2b}
+header{background:#173d2b;color:white;padding:15px 4%;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.logo{font-size:27px;font-weight:bold;color:#e5bd64}
+nav{display:flex;gap:14px;flex-wrap:wrap}
+nav a{color:white;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+.admin-open,.gold{background:#d6ae55;color:#173d2b;border:0;border-radius:8px;padding:11px 14px;font-weight:bold}
+.hero{text-align:center;padding:65px 15px;color:white;background:linear-gradient(#102d22bb,#102d22bb),url("https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=1400") center/cover}
+.hero h1{font-size:34px;color:#f0cd78}
+.container{width:92%;max-width:1100px;margin:30px auto}
+.title{text-align:center;color:#1b4932}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.product,.panel,.cart{background:white;border-radius:12px;overflow:hidden;box-shadow:0 3px 12px #0001;border:1px solid #eee}
+.product img{width:100%;height:165px;object-fit:cover}
+.product-info{padding:12px}
+.product h3{margin:0;color:#214a32}
+.price{color:#a47a24;font-weight:bold;margin:8px 0}
+.add{width:100%;padding:10px;background:#1b4932;color:white;border:0;border-radius:7px}
+.search{width:100%;padding:13px;border:1px solid #ccc;border-radius:8px;margin:10px 0 18px;font:inherit}
+.filters{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:20px}
+.filters button{background:white;border:1px solid #1b4932;color:#1b4932;border-radius:20px;padding:8px 13px}
+.filters button.active{background:#1b4932;color:white}
+.cart{padding:18px}
+.cart-row{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid #eee;flex-wrap:wrap}
+.small{padding:6px 10px;border:0;border-radius:5px;background:#e8eee8}
+.remove{background:#f8dddd;color:#900}
+.total{font-size:19px;font-weight:bold;margin:18px 0;color:#1b4932}
+.checkout{width:100%;padding:14px;background:#159653;color:white;border:0;border-radius:8px;font-size:16px}
+footer{text-align:center;background:#173d2b;color:white;padding:28px 12px;margin-top:40px;line-height:2}
+footer a{color:#f0cd78}
+.modal{display:none;position:fixed;inset:0;background:#0009;z-index:10;overflow:auto;padding:15px}
+.modal.show{display:block}
+.panel{max-width:700px;margin:20px auto;padding:20px}
+.field{margin:12px 0}
+.field label{display:block;font-weight:bold;margin-bottom:6px}
+.field input,.field select{width:100%;padding:12px;border:1px solid #ccc;border-radius:7px;font:inherit}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}
+.actions button,.save{padding:11px 14px;border:0;border-radius:7px;background:#1b4932;color:white}
+.cancel{background:#777!important}
+.admin-product{border:1px solid #ddd;border-radius:8px;padding:10px;margin:9px 0;display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap}
+.note{background:#fff5d9;padding:12px;border-radius:8px;font-size:13px;line-height:2}
+@media(max-width:750px){.products{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:27px}}
+@media(max-width:380px){.products{grid-template-columns:1fr}}
 </style>
 </head>
-
 <body>
 
 <header>
-<div class="container nav-wrap">
-  <div class="logo">
-    وال
-    <span>VAL / WALL</span>
-  </div>
+  <div class="logo">VAL | وال</div>
+  <button class="admin-open" onclick="openLogin()">ورود مدیر</button>
   <nav>
-    <a href="#coffee">قهوه‌های وال</a>
-    <a href="#tools">ابزارالات وال</a>
-    <a href="#powders">پودریجات</a>
-    <a href="#syrups">سیروپ‌های وال</a>
+    <a href="#home">خانه</a>
+    <a href="#products">محصولات</a>
     <a href="#cart">سبد خرید</a>
-    <a href="#contact">ارتباط با ما</a>
+    <a href="#contact">تماس با ما</a>
   </nav>
-</div>
 </header>
 
-<section class="hero">
-<div class="container">
-  <h1>مجموعه بازرگانی و فروشگاه وال</h1>
-  <p>تامین تخصصی دانه‌های قهوه، تجهیزات باریستایی، پودریجات و سیروپ</p>
-</div>
+<section class="hero" id="home">
+  <h1>به فروشگاه وال خوش آمدید</h1>
+  <p>تجربه‌ای متفاوت از دنیای قهوه و تجهیزات باریستا</p>
+  <a href="#products"><button class="gold">مشاهده محصولات</button></a>
 </section>
 
 <main class="container">
+  <h2 class="title" id="products">محصولات فروشگاه</h2>
+  <input class="search" id="search" placeholder="جستجوی محصول..." oninput="renderProducts()">
+  <div class="filters" id="filters"></div>
+  <div class="products" id="productsList"></div>
 
-<!-- قهوه‌ها -->
-<section id="coffee">
-<div class="section-title">
-  <h2>قهوه‌های وال</h2>
-  <p>قهوه‌های برند، ترکیبی و تک‌خاستگاه</p>
-</div>
-<div class="grid">
-
-<article class="card">
-<div class="card-img">
-<span class="placeholder-text">عکس قهوه ۱</span>
-</div>
-<div class="card-content">
-<h3 class="card-title">قهوه اسپرسو نمونه</h3>
-<p class="card-desc">توضیحات و ترکیب قهوه را وارد کنید.</p>
-<div class="card-price">۳۵۰,۰۰۰ تومان</div>
-<button class="add-cart-btn" data-name="قهوه اسپرسو نمونه" data-price="350000">افزودن به سبد خرید 🛒</button>
-</div>
-</article>
-
-<article class="card">
-<div class="card-img"><span class="placeholder-text">عکس قهوه ۲</span></div>
-<div class="card-content">
-<h3 class="card-title">قهوه ترکیبی نمونه</h3>
-<p class="card-desc">توضیحات محصول را وارد کنید.</p>
-<div class="card-price">۴۰۰,۰۰۰ تومان</div>
-<button class="add-cart-btn" data-name="قهوه ترکیبی نمونه" data-price="400000">افزودن به سبد خرید 🛒</button>
-</div>
-</article>
-
-<article class="card">
-<div class="card-img"><span class="placeholder-text">عکس قهوه ۳</span></div>
-<div class="card-content">
-<h3 class="card-title">قهوه تک‌خاستگاه نمونه</h3>
-<p class="card-desc">توضیحات محصول را وارد کنید.</p>
-<div class="card-price">۵۰۰,۰۰۰ تومان</div>
-<button class="add-cart-btn" data-name="قهوه تک خاستگاه نمونه" data-price="500000">افزودن به سبد خرید 🛒</button>
-</div>
-</article>
-
-</div>
-</section>
-
-<!-- ابزارالات -->
-<section id="tools">
-<div class="section-title">
-<h2>ابزارالات وال</h2>
-<p>تجهیزات و اکسسوری‌های تخصصی باریستا</p>
-</div>
-<div class="grid">
-
-<article class="card">
-<div class="card-img"><span class="placeholder-text">عکس ابزار ۱</span></div>
-<div class="card-content">
-<h3 class="card-title">ابزار باریستا نمونه ۱</h3>
-<p class="card-desc">توضیحات ابزار را وارد کنید.</p>
-<div class="card-price">۲۵۰,۰۰۰ تومان</div>
-<button class="add-cart-btn" data-name="ابزار باریستا نمونه ۱" data-price="250000">افزودن به سبد خرید 🛒</button>
-</div>
-</article>
-
-<article class="card">
-<div class="card-img"><span class="placeholder-text">عکس ابزار ۲</span></div>
-<div class="card-content">
-<h3 class="card-title">ابزار باریستا نمونه ۲</h3>
-<p class="card-desc">توضیحات ابزار را وارد کنید.</p>
-<div class="card-price">۳۰۰,۰۰۰ تومان</div>
-<button class="add-cart-btn" data-name="ابزار باریستا نمونه ۲" data-price="300000">افزودن به سبد خرید 🛒</button>
-</div>
-</article>
-
-<article class="card">
-<div class="card-img"><span class="placeholder-text">عکس ابزار ۳</span></div>
-<div class="card-content">
-<h3 class="card-title">ابزار باریستا نمونه ۳</h3>
-<p class="card-desc">توضیحات ابزار را وارد کنید.</p>
-<div class="card-price">۳۵۰,۰۰۰ تومان</div>
-<button class="add-cart-btn" data-name="ابزار باریستا نمونه ۳" data-price="350000">افزودن به سبد خرید 🛒</button>
-</div>
-</article>
-
-</div>
-</section>
-
-<!-- پودریجات -->
-<section id="powders">
-<div class="section-title">
-<h2>پودریجات</h2>
-<p>هات چاکلت، ماسالا، وایت چاکلت و پودر کاکائو</p>
-</div>
-<div class="grid">
-
-<article class="card">
-<div class="card-img"><span class="placeholder-text">عکس پودر ۱</span></div>
-<div class="card-content">
-<h3 class="card-title">هات چاکلت نمونه</h3>
-<p class="card-desc">گرماژ و توضیحات محصول را وارد کنید.</p>
-<div class="card-price">۱۸۰,۰۰۰ تومان</div>
-<button class="add-cart-btn" data-name="هات چاکلت نمونه" data-price="180000">افزودن به سبد خرید 🛒</button>
-</div>
-</article>
-
-<article class="card">
-<div class="card-img"><span class="placeholder-text">عکس پودر ۲</span></div>
-<div class="card-content">
-<h3 class="card-title">ماسالا نمونه</h3>
-<p class="card-desc">گرماژ و توضیحات محصول را وارد کنید.</p>
-<div class="card-price">۲۰۰,۰۰۰ تومان</div>
-<button class="add-cart-btn" data-name="ماسالا نمونه" data-price="200000">افزودن به سبد خرید 🛒</button>
-</div>
-</article>
-
-</div>
-</section>
-
-<!-- سیروپ‌ها -->
-<section id="syrups">
-<div class="section-title">
-<h2>سیروپ‌های وال</h2>
-<p>طعم‌دهنده‌های مخصوص نوشیدنی و ماکتیل</p>
-</div>
-<div class="grid">
-
-<article class="card">
-<div class="card-img"><span class="placeholder-text">عکس سیروپ ۱</span></div>
-<div class="card-content">
-<h3 class="card-title">سیروپ وانیل نمونه</h3>
-<p class="card-desc">حجم و توضیحات محصول را وارد کنید.</p>
-<div class="card-price">۱۵۰,۰۰۰ تومان</div>
-<button class="add-cart-btn" data-name="سیروپ وانیل نمونه" data-price="150000">افزودن به سبد خرید 🛒</button>
-</div>
-</article>
-
-<article class="card">
-<div class="card-img"><span class="placeholder-text">عکس سیروپ ۲</span></div>
-<div class="card-content">
-<h3 class="card-title">سیروپ کارامل نمونه</h3>
-<p class="card-desc">حجم و توضیحات محصول را وارد کنید.</p>
-<div class="card-price">۱۶۰,۰۰۰ تومان</div>
-<button class="add-cart-btn" data-name="سیروپ کارامل نمونه" data-price="160000">افزودن به سبد خرید 🛒</button>
-</div>
-</article>
-
-</div>
-</section>
-
-<!-- سبد خرید -->
-<section class="cart-section" id="cart">
-<h2>🛒 سبد خرید وال</h2>
-<p>تعداد محصولات: <span class="cart-count" id="cart-count">۰</span></p>
-
-<div id="cart-items">
-<p>سبد خرید شما خالی است.</p>
-</div>
-
-<div class="cart-total">
-مبلغ کل: <span id="cart-total">۰</span> تومان
-</div>
-
-<button class="whatsapp-order" id="whatsapp-order">
-ثبت سفارش از طریق واتساپ
-</button>
-</section>
-
+  <section id="cart" style="margin-top:45px">
+    <h2 class="title">سبد خرید</h2>
+    <div class="cart">
+      <div id="cartItems">سبد خرید خالی است.</div>
+      <div class="total" id="total">مجموع: ۰ تومان</div>
+      <button class="checkout" onclick="checkout()">ثبت سفارش در واتساپ</button>
+    </div>
+  </section>
 </main>
 
-<!-- ارتباط با ما -->
-<section class="contact-section" id="contact">
-<div class="container">
-<div class="section-title">
-<h2>راه ارتباطی با ما</h2>
-<p>جهت استعلام موجودی و سفارش عمده در خدمت شما هستیم.</p>
-</div>
-
-<div class="contact-grid">
-
-<div class="contact-card">
-<h3>📱 اینستاگرام وال</h3>
-<p>برای مشاهده محصولات و ثبت سفارش:</p>
-<a class="insta-link" href="https://instagram.com/Val.zarand" target="_blank" rel="noopener">@Val.zarand</a>
-</div>
-
-<div class="contact-card">
-<h3>📍 آدرس فروشگاه</h3>
-<p>زرند، خیابان فردوس، نبش کوچه ۲۶</p>
-</div>
-
-<div class="contact-card">
-<h3>🏭 انبار و دفتر فروش عمده</h3>
-<p>شهرک صنعتی شماره ۳</p>
-</div>
-
-</div>
-</div>
-</section>
-
-<footer>
-<p>© تمامی حقوق برای مجموعه قهوه و تجهیزات وال محفوظ است.</p>
+<footer id="contact">
+  <h2>فروشگاه وال | VAL</h2>
+  <div id="address">زرند، خیابان فردوس، نبش کوچه ۲۶</div>
+  <div id="warehouse">انبار عمده: شهرک صنعتی شماره ۳</div>
+  <div>اینستاگرام: <a id="instagram" href="https://instagram.com/Val.zarand" target="_blank">@Val.zarand</a></div>
+  <div>واتساپ: <a id="phoneLink" href="https://wa.me/989935533452">۰۹۹۳۵۵۳۳۴۵۲</a></div>
+  <p>تمام حقوق برای فروشگاه وال محفوظ است.</p>
 </footer>
 
+<div class="modal" id="loginModal">
+  <div class="panel">
+    <h2>ورود به پنل مدیریت</h2>
+    <div class="field">
+      <label>رمز عبور</label>
+      <input type="password" id="adminPassword" placeholder="رمز مدیریت">
+    </div>
+    <div class="actions">
+      <button onclick="login()">ورود</button>
+      <button class="cancel" onclick="closeModal('loginModal')">بستن</button>
+    </div>
+    <div id="loginMessage"></div>
+  </div>
+</div>
+
+<div class="modal" id="adminModal">
+  <div class="panel">
+    <h2>پنل مدیریت فروشگاه وال</h2>
+    <div class="note">اطلاعات ذخیره‌شده در همین مرورگر نگهداری می‌شود. برای انتشار تغییرات در سایت عمومی، فایل JSON را دریافت و اطلاعات آن را در نسخه سایت قرار دهید.</div>
+
+    <h3>افزودن یا ویرایش محصول</h3>
+    <input type="hidden" id="editId">
+    <div class="field"><label>نام محصول</label><input id="pName" placeholder="مثلاً قهوه اسپرسو"></div>
+    <div class="field"><label>قیمت به تومان</label><input id="pPrice" type="number" min="0" placeholder="مثلاً ۲۵۰۰۰۰"></div>
+    <div class="field">
+      <label>دسته‌بندی</label>
+      <select id="pCategory">
+        <option>قهوه</option><option>تجهیزات</option><option>پودریجات</option><option>سیروپ</option>
+      </select>
+    </div>
+    <div class="field"><label>آدرس تصویر محصول</label><input id="pImage" placeholder="https://..."></div>
+    <div class="actions">
+      <button class="save" onclick="saveProduct()">ذخیره محصول</button>
+      <button class="cancel" onclick="clearForm()">پاک کردن فرم</button>
+    </div>
+
+    <h3>مدیریت محصولات</h3>
+    <div id="adminProducts"></div>
+
+    <hr>
+    <h3>اطلاعات فروشگاه</h3>
+    <div class="field"><label>آدرس فروشگاه</label><input id="shopAddress"></div>
+    <div class="field"><label>آدرس انبار</label><input id="shopWarehouse"></div>
+    <div class="field"><label>شماره واتساپ با کد کشور</label><input id="shopPhone"></div>
+    <div class="field"><label>لینک اینستاگرام</label><input id="shopInstagram"></div>
+    <button class="save" onclick="saveSettings()">ذخیره اطلاعات فروشگاه</button>
+
+    <hr>
+    <h3>پشتیبان‌گیری و انتقال اطلاعات</h3>
+    <div class="actions">
+      <button onclick="exportData()">دریافت فایل اطلاعات JSON</button>
+      <button onclick="document.getElementById('importFile').click()">وارد کردن فایل JSON</button>
+      <input type="file" id="importFile" accept=".json,application/json" hidden onchange="importData(event)">
+    </div>
+    <div class="actions">
+      <button class="cancel" onclick="logout()">خروج از مدیریت</button>
+      <button class="cancel" onclick="closeModal('adminModal')">بستن پنل</button>
+    </div>
+    <div id="adminMessage"></div>
+  </div>
+</div>
+
 <script>
-const whatsappNumber = "989935533452";
-let cart = [];
+const DEFAULT_PRODUCTS = [
+ {id:1,name:"قهوه اسپرسو",price:250000,category:"قهوه",image:"https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=600"},
+ {id:2,name:"قهوه ترک",price:220000,category:"قهوه",image:"https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600"},
+ {id:3,name:"هات چاکلت",price:180000,category:"پودریجات",image:"https://images.unsplash.com/photo-1542990253-0b8be3f6a7c1?w=600"},
+ {id:4,name:"تجهیزات باریستا",price:500000,category:"تجهیزات",image:"https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=600"}
+];
 
-function formatPrice(number) {
-  return Number(number).toLocaleString("fa-IR");
-}
+const KEY="val_shop_products_v1";
+const SETTINGS_KEY="val_shop_settings_v1";
+const CART_KEY="val_shop_cart_v1";
 
-function addToCart(name, price) {
-  const existing = cart.find(item => item.name === name);
-
-  if (existing) {
-    existing.quantity++;
-  } else {
-    cart.push({
-      name: name,
-      price: Number(price),
-      quantity: 1
-    });
-  }
-
-  renderCart();
-}
-
-function changeQuantity(index, amount) {
-  cart[index].quantity += amount;
-
-  if (cart[index].quantity <= 0) {
-    cart.splice(index, 1);
-  }
-
-  renderCart();
-}
-
-function removeItem(index) {
-  cart.splice(index, 1);
-  renderCart();
-}
-
-function renderCart() {
-  const container = document.getElementById("cart-items");
-  const totalElement = document.getElementById("cart-total");
-  const countElement = document.getElementById("cart-count");
-
-  container.innerHTML = "";
-
-  if (cart.length === 0) {
-    container.textContent = "سبد خرید شما خالی است.";
-    totalElement.textContent = "۰";
-    countElement.textContent = "۰";
-    return;
-  }
-
-  let total = 0;
-  let count = 0;
-
-  cart.forEach((item, index) => {
-    total += item.price * item.quantity;
-    count += item.quantity;
-
-    const row = document.createElement("div");
-    row.className = "cart-item";
-
-    const info = document.createElement("div");
-
-    const name = document.createElement("strong");
-    name.textContent = item.name;
-
-    const price = document.createElement("p");
-    price.textContent = formatPrice(item.price) + " تومان";
-
-    const quantity = document.createElement("p");
-    quantity.textContent = "تعداد: " + formatPrice(item.quantity);
-
-    info.append(name, price, quantity);
-
-    const controls = document.createElement("div");
-
-    const minus = document.createElement("button");
-    minus.textContent = "−";
-    minus.onclick = () => changeQuantity(index, -1);
-
-    const plus = document.createElement("button");
-    plus.textContent = "+";
-    plus.onclick = () => changeQuantity(index, 1);
-
-    const remove = document.createElement("button");
-    remove.textContent = "حذف";
-    remove.className = "delete-btn";
-    remove.onclick = () => removeItem(index);
-
-    controls.append(minus, plus, remove);
-    row.append(info, controls);
-    container.appendChild(row);
-  });
-
-  totalElement.textContent = formatPrice(total);
-  countElement.textContent = formatPrice(count);
-}
-
-document.querySelectorAll(".add-cart-btn").forEach(button => {
-  button.addEventListener("click", () => {
-    addToCart(
-      button.dataset.name,
-      button.dataset.price
-    );
-
-    document.getElementById("cart").scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
-  });
+let products=load(KEY,DEFAULT_PRODUCTS);
+let cart=load(CART_KEY,[]);
+let settings=load(SETTINGS_KEY,{
+ address:"زرند، خیابان فردوس، نبش کوچه ۲۶",
+ warehouse:"شهرک صنعتی شماره ۳",
+ phone:"989935533452",
+ instagram:"https://instagram.com/Val.zarand"
 });
+let activeCategory="همه";
 
-document.getElementById("whatsapp-order")
-.addEventListener("click", function() {
-
-  if (cart.length === 0) {
-    alert("سبد خرید شما خالی است!");
-    return;
-  }
-
-  let total = 0;
-
-  let message =
-    "سلام، سفارش جدید از فروشگاه وال دارم 🌿\n\n";
-
-  message += "🛒 فهرست محصولات:\n\n";
-
-  cart.forEach((item, index) => {
-    const subtotal = item.price * item.quantity;
-    total += subtotal;
-
-    message +=
-      (index + 1) + ". " + item.name + "\n" +
-      "تعداد: " + item.quantity + "\n" +
-      "قیمت: " + formatPrice(subtotal) + " تومان\n\n";
-  });
-
-  message +=
-    "💰 مبلغ کل: " + formatPrice(total) + " تومان\n\n";
-
-  message +=
-    "لطفاً برای هماهنگی و ثبت نهایی سفارش راهنمایی بفرمایید.";
-
-  const url =
-    "https://wa.me/" +
-    whatsappNumber +
-    "?text=" +
-    encodeURIComponent(message);
-
-  window.location.href = url;
-});
-
+function load(key,fallback){
+ try{
+  const value=localStorage.getItem(key);
+  return value?JSON.parse(value):fallback;
+ }catch(e){return fallback}
+}
+function store(){
+ localStorage.setItem(KEY,JSON.stringify(products));
+ localStorage.setItem(CART_KEY,JSON.stringify(cart));
+ localStorage.setItem(SETTINGS_KEY,JSON.stringify(settings));
+}
+function money(value){
+ return Number(value||0).toLocaleString("fa-IR")+" تومان";
+}
+function openLogin(){
+ document.getElementById("loginModal").classList.add("show");
+}
+function closeModal(id){
+ document.getElementById(id).classList.remove("show");
+}
+function login(){
+ const pass=document.getElementById("adminPassword").value;
+ if(pass==="VAL!Admin#8264"){
+  closeModal("loginModal");
+  document.getElementById("adminModal").classList.add("show");
+  document.getElementById("adminPassword").value="";
+  fillSettings();
+  renderAdmin();
+ }else{
+  document.getElementById("loginMessage").textContent="رمز عبور اشتباه است.";
+ }
+}
+function logout(){
+ closeModal("adminModal");
+}
+function renderFilters(){
+ const cats=["همه",...new Set(products.map(p=>p.category))];
+ document.getElementById("filters").innerHTML=cats.map(c=>
+  `<button class="${activeCategory===c?'active':''}" onclick="setCategory('${safe(c)}')">${safe(c)}</button>`
+ ).join("");
+}
+function setCategory(category){
+ activeCategory=category;
+ renderProducts();
+}
+function renderProducts(){
+ renderFilters();
+ const q=document.getElementById("search").value.trim().toLowerCase();
+ const list=products.filter(p=>
+  (activeCategory==="همه"||p.category===activeCategory)&&
+  p.name.toLowerCase().includes(q)
+ );
+ document.getElementById("productsList").innerHTML=list.length?list.map(p=>`
+  <article class="product">
+   <img src="${safe(p.image)}" alt="${safe(p.name)}" onerror="this.src='https://placehold.co/600x400?text=VAL'">
+   <div class="product-info">
+    <h3>${safe(p.name)}</h3>
+    <div>${safe(p.category)}</div>
+    <div class="price">${money(p.price)}</div>
+    <button class="add" onclick="addToCart(${Number(p.id)})">افزودن به سبد خرید</button>
+   </div>
+  </article>`).join(""):"<p>محصولی پیدا نشد.</p>";
+}
+function addToCart(id){
+ const item=cart.find(x=>x.id===id);
+ if(item)item.qty++;
+ else cart.push({id,qty:1});
+ store();renderCart();
+}
+function renderCart(){
+ const box=document.getElementById("cartItems");
+ if(!cart.length){
+  box.textContent="سبد خرید خالی است.";
+ }else{
+  box.innerHTML=cart.map(item=>{
+   const p=products.find(x=>x.id===item.id);
+   if(!p)return "";
+   return `<div class="cart-row">
+    <span>${safe(p.name)} × ${item.qty}</span>
+    <span>${money(p.price*item.qty)}</span>
+    <span>
+     <button class="small" onclick="changeQty(${item.id},1)">+</button>
+     <button class="small" onclick="changeQty(${item.id},-1)">−</button>
+     <button class="small remove" onclick="removeCart(${item.id})">حذف</button>
+    </span>
+   </div>`;
+  }).join("");
+ }
+ const total=cart.reduce((sum,item)=>{
+  const p=products.find(x=>x.id===item.id);
+  return sum+(p?p.price*item.qty:0);
+ },0);
+ document.getElementById("total").textContent="مجموع: "+money(total);
+}
+function changeQty(id,change){
+ const item=cart.find(x=>x.id===id);
+ if(!item)return;
+ item.qty+=change;
+ if(item.qty<=0)removeCart(id);
+ else{store();renderCart()}
+}
+function removeCart(id){
+ cart=cart.filter(x=>x.id!==id);
+ store();renderCart();
+}
+function checkout(){
+ if(!cart.length){alert("سبد خرید خالی است.");return}
+ let lines=["سلام، برای سفارش محصولات فروشگاه وال پیام می‌دهم:"];
+ cart.forEach(item=>{
+  const p=products.find(x=>x.id===item.id);
+  if(p)lines.push(p.name+" - تعداد: "+item.qty+" - "+money(p.price*item.qty));
+ });
+ const total=cart.reduce((sum,item)=>{
+  const p=products.find(x=>x.id===item.id);
+  return sum+(p?p.price*item.qty:0);
+ },0);
+ lines.push("مجموع: "+money(total));
+ const phone=String(settings.phone).replace(/\D/g,"");
+ window.open("https://wa.me/"+phone+"?text="+encodeURIComponent(lines.join("\n")),"_blank");
+}
+function clearForm(){
+ ["editId","pName","pPrice","pImage"].forEach(id=>document.getElementById(id).value="");
+ document.getElementById("pCategory").value="قهوه";
+}
+function saveProduct(){
+ const name=document.getElementById("pName").value.trim();
+ const price=Number(document.getElementById("pPrice").value);
+ const category=document.getElementById("pCategory").value;
+ const image=document.getElementById("pImage").value.trim();
+ const editId=Number(document.getElementById("editId").value);
+ if(!name||!Number.isFinite(price)||price<0){
+  alert("نام و قیمت معتبر وارد کنید.");return;
+ }
+ if(editId){
+  const p=products.find(x=>x.id===editId);
+  if(p)Object.assign(p,{name,price,category,image:image||p.image});
+ }else{
+  products.push({id:Date.now(),name,price,category,image:image||"https://placehold.co/600x400?text=VAL"});
+ }
+ store();clearForm();renderProducts();renderAdmin();
+ document.getElementById("adminMessage").textContent="محصول ذخیره شد.";
+}
+function editProduct(id){
+ const p=products.find(x=>x.id===id);
+ if(!p)return;
+ document.getElementById("editId").value=p.id;
+ document.getElementById("pName").value=p.name;
+ document.getElementById("pPrice").value=p.price;
+ document.getElementById("pCategory").value=p.category;
+ document.getElementById("pImage").value=p.image;
+ window.scrollTo({top:document.getElementById("adminModal").scrollTop,behavior:"smooth"});
+}
+function deleteProduct(id){
+ if(!confirm("این محصول حذف شود؟"))return;
+ products=products.filter(p=>p.id!==id);
+ cart=cart.filter(x=>x.id!==id);
+ store();renderProducts();renderCart();renderAdmin();
+}
+function renderAdmin(){
+ document.getElementById("adminProducts").innerHTML=products.map(p=>`
+  <div class="admin-product">
+   <span>${safe(p.name)} - ${money(p.price)}</span>
+   <span>
+    <button class="small" onclick="editProduct(${p.id})">ویرایش</button>
+    <button class="small remove" onclick="deleteProduct(${p.id})">حذف</button>
+   </span>
+  </div>`).join("");
+}
+function fillSettings(){
+ document.getElementById("shopAddress").value=settings.address;
+ document.getElementById("shopWarehouse").value=settings.warehouse;
+ document.getElementById("shopPhone").value=settings.phone;
+ document.getElementById("shopInstagram").value=settings.instagram;
+}
+function saveSettings(){
+ settings={
+  address:document.getElementById("shopAddress").value.trim(),
+  warehouse:document.getElementById("shopWarehouse").value.trim(),
+  phone:document.getElementById("shopPhone").value.trim(),
+  instagram:document.getElementById("shopInstagram").value.trim()
+ };
+ store();renderFooter();
+ document.getElementById("adminMessage").textContent="اطلاعات فروشگاه ذخیره شد.";
+}
+function renderFooter(){
+ document.getElementById("address").textContent=settings.address;
+ document.getElementById("warehouse").textContent="انبار عمده: "+settings.warehouse;
+ document.getElementById("instagram").href=settings.instagram;
+ document.getElementById("phoneLink").href="https://wa.me/"+settings.phone.replace(/\D/g,"");
+ document.getElementById("phoneLink").textContent=settings.phone;
+}
+function exportData(){
+ const data={products,settings};
+ const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});
+ const url=URL.createObjectURL(blob);
+ const a=document.createElement("a");
+ a.href=url;a.download="val-shop-data.json";a.click();
+ URL.revokeObjectURL(url);
+}
+function importData(event){
+ const file=event.target.files[0];
+ if(!file)return;
+ const reader=new FileReader();
+ reader.onload=()=>{
+  try{
+   const data=JSON.parse(reader.result);
+   if(!Array.isArray(data.products)||!data.settings)throw new Error();
+   products=data.products;settings=data.settings;
+   store();renderProducts();renderCart();renderAdmin();fillSettings();renderFooter();
+   document.getElementById("adminMessage").textContent="اطلاعات وارد شد.";
+  }catch(e){alert("فایل انتخاب‌شده معتبر نیست.")}
+  event.target.value="";
+ };
+ reader.readAsText(file);
+}
+function safe(value){
+ return String(value??"").replace(/[&<>"']/g,c=>({
+  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+ }[c]));
+}
+renderProducts();
 renderCart();
+renderFooter();
 </script>
-
 </body>
 </html>
