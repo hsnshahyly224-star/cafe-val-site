@@ -1,403 +1,588 @@
-<!DOCTYPE html><html lang="fa" dir="rtl">
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#f7f1e5">
-  <meta name="description" content="به کافه وال خوش آمدید؛ جایی برای قهوه خوب، آرامش و لحظه‌های شیرین.">
-  <title>کافه وال | طعم لحظه‌های خوب</title>
-  <style>
-    :root {
-      --cream: #f7f1e5;
-      --olive: #626b43;
-      --brown: #49352a;
-      --light: #fffdf8;
-      --muted: #796f62;
-    }* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>وال | فروشگاه قهوه و ملزومات باریستا</title>
+
+<style>
+:root {
+  --primary:#2d5a3f;
+  --dark:#1b3827;
+  --bg:#f9f8f5;
+  --text:#222521;
+  --muted:#6e726b;
+  --border:#e6e8e3;
+  --accent:#c49a45;
 }
-
-html {
-  scroll-behavior: smooth;
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:Tahoma,Arial,sans-serif;
+  line-height:1.8;
 }
-
-body {
-  font-family: Tahoma, Arial, sans-serif;
-  background: var(--cream);
-  color: var(--brown);
-  line-height: 1.9;
+a{text-decoration:none;color:inherit}
+.container{
+  width:min(1180px,calc(100% - 32px));
+  margin:auto;
 }
-
-a {
-  color: inherit;
-  text-decoration: none;
+header{
+  position:sticky;top:0;z-index:100;
+  background:#ffffffef;
+  border-bottom:1px solid var(--border);
 }
-
-.container {
-  width: min(1100px, 90%);
-  margin: auto;
+.nav-wrap{
+  display:flex;align-items:center;
+  justify-content:space-between;
+  min-height:75px;gap:15px;
 }
-
-header {
-  padding: 22px 0;
-  background: rgba(255, 253, 248, 0.96);
-  border-bottom: 1px solid #e6dece;
+.logo{
+  font-size:27px;font-weight:900;
+  color:var(--primary);
 }
-
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  flex-wrap: wrap;
+.logo span{
+  display:block;font-size:12px;
+  color:var(--accent);
 }
-
-.logo {
-  font-size: 27px;
-  font-weight: bold;
-  color: var(--olive);
+nav{
+  display:flex;gap:16px;
+  overflow-x:auto;white-space:nowrap;
+  font-size:13px;font-weight:bold;
+  padding:8px 0;
 }
-
-.logo span {
-  color: var(--brown);
+nav a:hover{color:var(--primary)}
+.hero{
+  background:linear-gradient(135deg,var(--dark),var(--primary));
+  color:white;text-align:center;
+  padding:65px 15px;
 }
-
-.nav-links {
-  display: flex;
-  gap: 22px;
-  flex-wrap: wrap;
-  font-size: 14px;
+.hero h1{font-size:30px;margin-bottom:12px}
+.hero p{color:#d8e5dc}
+section{
+  padding:55px 0 20px;
+  scroll-margin-top:85px;
 }
-
-.nav-links a:hover {
-  color: var(--olive);
+.section-title{
+  border-right:4px solid var(--primary);
+  padding-right:12px;margin-bottom:25px;
 }
-
-.hero {
-  padding: 75px 0;
-  background:
-    radial-gradient(ellipse at 10% 10%, #e1dfc7, transparent 45%),
-    linear-gradient(135deg, #f7f1e5, #e9e3d2);
+.section-title h2{
+  color:var(--dark);font-size:23px;
 }
-
-.hero-content {
-  max-width: 720px;
-  text-align: center;
-  margin: auto;
+.section-title p{
+  color:var(--muted);font-size:14px;
 }
-
-.badge {
-  display: inline-block;
-  background: #e2e3d0;
-  color: var(--olive);
-  padding: 5px 16px;
-  border-radius: 30px;
-  font-size: 13px;
-  margin-bottom: 20px;
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+  gap:20px;
 }
-
-h1 {
-  font-size: clamp(32px, 6vw, 55px);
-  line-height: 1.5;
-  margin-bottom: 18px;
+.card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:16px;overflow:hidden;
+  display:flex;flex-direction:column;
+  box-shadow:0 4px 15px #00000008;
 }
-
-.hero p {
-  max-width: 560px;
-  margin: auto;
-  color: var(--muted);
-  font-size: 16px;
+.card-img{
+  height:190px;background:#eef1ed;
+  display:flex;align-items:center;
+  justify-content:center;overflow:hidden;
 }
-
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 28px;
+.card-img img{
+  width:100%;height:100%;object-fit:cover;
 }
-
-.btn {
-  display: inline-block;
-  padding: 11px 24px;
-  border-radius: 10px;
-  font-weight: bold;
-  transition: 0.2s;
+.placeholder-text{
+  color:var(--muted);
+  border:2px dashed #ccd3c9;
+  padding:15px;border-radius:8px;
 }
-
-.btn-primary {
-  background: var(--olive);
-  color: white;
+.card-content{
+  padding:17px;display:flex;
+  flex-direction:column;flex:1;
 }
-
-.btn-primary:hover {
-  background: #4e5635;
-  transform: translateY(-2px);
+.card-title{font-size:17px;margin-bottom:8px}
+.card-desc{
+  color:var(--muted);font-size:13px;
+  margin-bottom:15px;flex:1;
 }
-
-.btn-secondary {
-  border: 1px solid var(--olive);
-  color: var(--olive);
+.card-price{
+  color:var(--primary);
+  font-size:16px;font-weight:bold;
+  border-top:1px dashed var(--border);
+  padding-top:10px;
 }
-
-section {
-  padding: 65px 0;
+.add-cart-btn{
+  background:var(--primary);
+  color:white;border:0;
+  padding:12px;border-radius:9px;
+  width:100%;margin-top:12px;
+  font-size:14px;font-weight:bold;
+  cursor:pointer;
 }
-
-.section-title {
-  text-align: center;
-  margin-bottom: 35px;
+.add-cart-btn:hover{background:var(--dark)}
+.cart-section{
+  background:white;
+  border:2px solid var(--primary);
+  border-radius:16px;
+  padding:20px;margin:50px 0;
 }
-
-.section-title h2 {
-  font-size: 29px;
-  margin-bottom: 8px;
+.cart-section h2{
+  color:var(--dark);margin-bottom:15px;
 }
-
-.section-title p {
-  color: var(--muted);
-  font-size: 14px;
+.cart-item{
+  display:flex;justify-content:space-between;
+  align-items:center;gap:10px;
+  padding:13px 0;
+  border-bottom:1px solid var(--border);
 }
-
-.about-card {
-  max-width: 800px;
-  margin: auto;
-  background: var(--light);
-  border: 1px solid #e9e0d0;
-  padding: 30px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 10px 30px #49352a0b;
+.cart-item button{
+  border:0;border-radius:6px;
+  padding:6px 11px;
+  color:white;background:var(--primary);
+  cursor:pointer;margin:2px;
 }
-
-.about-card p {
-  color: var(--muted);
+.cart-item .delete-btn{background:#a83232}
+.cart-total{
+  color:var(--primary);
+  font-size:19px;font-weight:bold;
+  margin-top:20px;
 }
-
-.menu-section {
-  background: #eeeadc;
+.cart-count{
+  color:var(--accent);
+  font-weight:bold;
 }
-
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+.whatsapp-order{
+  display:block;text-align:center;
+  background:#25D366;color:white;
+  padding:14px;border-radius:10px;
+  font-weight:bold;margin-top:20px;
+  cursor:pointer;border:0;width:100%;
+  font-size:16px;
 }
-
-.menu-card {
-  background: var(--light);
-  border: 1px solid #e7dfd0;
-  padding: 25px 20px;
-  border-radius: 18px;
-  text-align: center;
-  transition: 0.2s;
+.whatsapp-order:hover{background:#1da851}
+.contact-section{
+  background:#f0eee8;
+  margin-top:50px;padding:55px 0;
 }
-
-.menu-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px #49352a12;
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:18px;
 }
-
-.menu-icon {
-  font-size: 42px;
-  margin-bottom: 10px;
+.contact-card{
+  background:white;padding:22px;
+  border-radius:14px;
+  border:1px solid var(--border);
 }
-
-.menu-card h3 {
-  font-size: 19px;
-  margin-bottom: 8px;
+.contact-card h3{
+  color:var(--primary);margin-bottom:10px;
 }
-
-.menu-card p {
-  color: var(--muted);
-  font-size: 13px;
-  margin-bottom: 12px;
+.insta-link{
+  direction:ltr;display:inline-block;
+  color:#d62976;font-weight:bold;
 }
-
-.price {
-  display: inline-block;
-  color: var(--olive);
-  font-weight: bold;
-  font-size: 14px;
+footer{
+  background:var(--dark);color:white;
+  text-align:center;padding:20px;
+  font-size:13px;
 }
-
-.contact-card {
-  max-width: 750px;
-  margin: auto;
-  background: var(--light);
-  border-radius: 20px;
-  padding: 30px;
-  border: 1px solid #e9e0d0;
+@media(max-width:600px){
+  .nav-wrap{align-items:flex-start;flex-direction:column;padding:10px 0}
+  nav{width:100%}
+  .hero h1{font-size:23px}
+  .cart-item{flex-direction:column;align-items:flex-start}
 }
-
-.contact-item {
-  padding: 13px 0;
-  border-bottom: 1px solid #eee7dc;
-}
-
-.contact-item:last-child {
-  border-bottom: none;
-}
-
-.contact-item strong {
-  color: var(--olive);
-}
-
-.note {
-  font-size: 12px;
-  color: var(--muted);
-  margin-top: 15px;
-}
-
-footer {
-  background: var(--brown);
-  color: #f7f1e5;
-  text-align: center;
-  padding: 25px 15px;
-  font-size: 13px;
-}
-
-footer p + p {
-  margin-top: 5px;
-  opacity: 0.8;
-}
-
-@media (max-width: 700px) {
-  .nav {
-    justify-content: center;
-  }
-
-  .nav-links {
-    justify-content: center;
-    gap: 14px;
-  }
-
-  .hero {
-    padding: 55px 0;
-  }
-
-  .menu-grid {
-    grid-template-columns: 1fr;
-  }
-
-  section {
-    padding: 48px 0;
-  }
-
-  .about-card,
-  .contact-card {
-    padding: 22px;
-  }
-}
-
-  </style>
+</style>
 </head>
-<body>  <header>
-    <div class="container nav">
-      <a class="logo" href="#home">کافه <span>وال</span> ☕</a>
-      <nav class="nav-links">
-        <a href="#home">صفحه اصلی</a>
-        <a href="#about">درباره ما</a>
-        <a href="#menu">منوی کافه</a>
-        <a href="#contact">تماس با ما</a>
-      </nav>
-    </div>
-  </header>  <main>
-    <section class="hero" id="home">
-      <div class="container hero-content">
-        <span class="badge">به کافه وال خوش آمدید</span>
-        <h1>طعم لحظه‌های خوب،<br>در کنار یک فنجان قهوه</h1>
-        <p>
-          اینجا جایی برای آرامش، گفت‌وگو و ساختن خاطره‌های شیرین است.
-          در کافه وال منتظر دیدار شما هستیم.
-        </p>
-        <div class="buttons">
-          <a class="btn btn-primary" href="#menu">دیدن منوی کافه</a>
-          <a class="btn btn-secondary" href="#contact">راه‌های ارتباطی</a>
-        </div>
-      </div>
-    </section><section id="about">
-  <div class="container">
-    <div class="section-title">
-      <h2>درباره کافه وال</h2>
-      <p>یک فنجان قهوه، یک حال خوب</p>
-    </div>
-    <div class="about-card">
-      <p>
-        کافه وال فضایی برای لذت بردن از طعم قهوه و لحظه‌های آرام است.
-        ما تلاش می‌کنیم با نوشیدنی‌های خوش‌طعم و فضایی صمیمی،
-        تجربه‌ای دلنشین برای شما بسازیم.
-      </p>
-    </div>
+
+<body>
+
+<header>
+<div class="container nav-wrap">
+  <div class="logo">
+    وال
+    <span>VAL / WALL</span>
   </div>
+  <nav>
+    <a href="#coffee">قهوه‌های وال</a>
+    <a href="#tools">ابزارالات وال</a>
+    <a href="#powders">پودریجات</a>
+    <a href="#syrups">سیروپ‌های وال</a>
+    <a href="#cart">سبد خرید</a>
+    <a href="#contact">ارتباط با ما</a>
+  </nav>
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+  <h1>مجموعه بازرگانی و فروشگاه وال</h1>
+  <p>تامین تخصصی دانه‌های قهوه، تجهیزات باریستایی، پودریجات و سیروپ</p>
+</div>
 </section>
 
-<section class="menu-section" id="menu">
-  <div class="container">
-    <div class="section-title">
-      <h2>منوی محبوب کافه</h2>
-      <p>انتخابی برای سلیقه‌های متفاوت</p>
-    </div>
+<main class="container">
 
-    <div class="menu-grid">
-      <article class="menu-card">
-        <div class="menu-icon">☕</div>
-        <h3>اسپرسو</h3>
-        <p>قهوه‌ای غلیظ با عطر و طعمی ماندگار</p>
-        <span class="price">قیمت: به‌زودی</span>
-      </article>
+<!-- قهوه‌ها -->
+<section id="coffee">
+<div class="section-title">
+  <h2>قهوه‌های وال</h2>
+  <p>قهوه‌های برند، ترکیبی و تک‌خاستگاه</p>
+</div>
+<div class="grid">
 
-      <article class="menu-card">
-        <div class="menu-icon">🥛</div>
-        <h3>لاته</h3>
-        <p>ترکیبی دلنشین از اسپرسو و شیر</p>
-        <span class="price">قیمت: به‌زودی</span>
-      </article>
+<article class="card">
+<div class="card-img">
+<span class="placeholder-text">عکس قهوه ۱</span>
+</div>
+<div class="card-content">
+<h3 class="card-title">قهوه اسپرسو نمونه</h3>
+<p class="card-desc">توضیحات و ترکیب قهوه را وارد کنید.</p>
+<div class="card-price">۳۵۰,۰۰۰ تومان</div>
+<button class="add-cart-btn" data-name="قهوه اسپرسو نمونه" data-price="350000">افزودن به سبد خرید 🛒</button>
+</div>
+</article>
 
-      <article class="menu-card">
-        <div class="menu-icon">🍰</div>
-        <h3>کیک روز</h3>
-        <p>شیرینی تازه برای لحظه‌های دوست‌داشتنی</p>
-        <span class="price">قیمت: به‌زودی</span>
-      </article>
-    </div>
-  </div>
+<article class="card">
+<div class="card-img"><span class="placeholder-text">عکس قهوه ۲</span></div>
+<div class="card-content">
+<h3 class="card-title">قهوه ترکیبی نمونه</h3>
+<p class="card-desc">توضیحات محصول را وارد کنید.</p>
+<div class="card-price">۴۰۰,۰۰۰ تومان</div>
+<button class="add-cart-btn" data-name="قهوه ترکیبی نمونه" data-price="400000">افزودن به سبد خرید 🛒</button>
+</div>
+</article>
+
+<article class="card">
+<div class="card-img"><span class="placeholder-text">عکس قهوه ۳</span></div>
+<div class="card-content">
+<h3 class="card-title">قهوه تک‌خاستگاه نمونه</h3>
+<p class="card-desc">توضیحات محصول را وارد کنید.</p>
+<div class="card-price">۵۰۰,۰۰۰ تومان</div>
+<button class="add-cart-btn" data-name="قهوه تک خاستگاه نمونه" data-price="500000">افزودن به سبد خرید 🛒</button>
+</div>
+</article>
+
+</div>
 </section>
 
-<section id="contact">
-  <div class="container">
-    <div class="section-title">
-      <h2>با کافه وال در ارتباط باشید</h2>
-      <p>خوشحال می‌شویم شما را ببینیم</p>
-    </div>
+<!-- ابزارالات -->
+<section id="tools">
+<div class="section-title">
+<h2>ابزارالات وال</h2>
+<p>تجهیزات و اکسسوری‌های تخصصی باریستا</p>
+</div>
+<div class="grid">
 
-    <div class="contact-card">
-      <div class="contact-item">
-        <strong>📍 آدرس کافه:</strong>
-        <p>آدرس دقیق کافه را اینجا وارد کنید.</p>
-      </div>
+<article class="card">
+<div class="card-img"><span class="placeholder-text">عکس ابزار ۱</span></div>
+<div class="card-content">
+<h3 class="card-title">ابزار باریستا نمونه ۱</h3>
+<p class="card-desc">توضیحات ابزار را وارد کنید.</p>
+<div class="card-price">۲۵۰,۰۰۰ تومان</div>
+<button class="add-cart-btn" data-name="ابزار باریستا نمونه ۱" data-price="250000">افزودن به سبد خرید 🛒</button>
+</div>
+</article>
 
-      <div class="contact-item">
-        <strong>📞 شماره تماس:</strong>
-        <p>شماره تلفن کافه را اینجا وارد کنید.</p>
-      </div>
+<article class="card">
+<div class="card-img"><span class="placeholder-text">عکس ابزار ۲</span></div>
+<div class="card-content">
+<h3 class="card-title">ابزار باریستا نمونه ۲</h3>
+<p class="card-desc">توضیحات ابزار را وارد کنید.</p>
+<div class="card-price">۳۰۰,۰۰۰ تومان</div>
+<button class="add-cart-btn" data-name="ابزار باریستا نمونه ۲" data-price="300000">افزودن به سبد خرید 🛒</button>
+</div>
+</article>
 
-      <div class="contact-item">
-        <strong>📷 اینستاگرام:</strong>
-        <p>لینک صفحه اینستاگرام کافه را پس از مشخص شدن اضافه کنید.</p>
-      </div>
+<article class="card">
+<div class="card-img"><span class="placeholder-text">عکس ابزار ۳</span></div>
+<div class="card-content">
+<h3 class="card-title">ابزار باریستا نمونه ۳</h3>
+<p class="card-desc">توضیحات ابزار را وارد کنید.</p>
+<div class="card-price">۳۵۰,۰۰۰ تومان</div>
+<button class="add-cart-btn" data-name="ابزار باریستا نمونه ۳" data-price="350000">افزودن به سبد خرید 🛒</button>
+</div>
+</article>
 
-      <p class="note">
-        اطلاعات تماس و قیمت‌ها نمونه هستند و باید با اطلاعات واقعی کافه جایگزین شوند.
-      </p>
-    </div>
-  </div>
+</div>
 </section>
 
-  </main>  <footer>
-    <p>کافه وال ☕ | طعم لحظه‌های خوب</p>
-    <p>با عشق برای دوستداران قهوه ساخته شده است.</p>
-  </footer></body>
-        </html>
+<!-- پودریجات -->
+<section id="powders">
+<div class="section-title">
+<h2>پودریجات</h2>
+<p>هات چاکلت، ماسالا، وایت چاکلت و پودر کاکائو</p>
+</div>
+<div class="grid">
 
+<article class="card">
+<div class="card-img"><span class="placeholder-text">عکس پودر ۱</span></div>
+<div class="card-content">
+<h3 class="card-title">هات چاکلت نمونه</h3>
+<p class="card-desc">گرماژ و توضیحات محصول را وارد کنید.</p>
+<div class="card-price">۱۸۰,۰۰۰ تومان</div>
+<button class="add-cart-btn" data-name="هات چاکلت نمونه" data-price="180000">افزودن به سبد خرید 🛒</button>
+</div>
+</article>
+
+<article class="card">
+<div class="card-img"><span class="placeholder-text">عکس پودر ۲</span></div>
+<div class="card-content">
+<h3 class="card-title">ماسالا نمونه</h3>
+<p class="card-desc">گرماژ و توضیحات محصول را وارد کنید.</p>
+<div class="card-price">۲۰۰,۰۰۰ تومان</div>
+<button class="add-cart-btn" data-name="ماسالا نمونه" data-price="200000">افزودن به سبد خرید 🛒</button>
+</div>
+</article>
+
+</div>
+</section>
+
+<!-- سیروپ‌ها -->
+<section id="syrups">
+<div class="section-title">
+<h2>سیروپ‌های وال</h2>
+<p>طعم‌دهنده‌های مخصوص نوشیدنی و ماکتیل</p>
+</div>
+<div class="grid">
+
+<article class="card">
+<div class="card-img"><span class="placeholder-text">عکس سیروپ ۱</span></div>
+<div class="card-content">
+<h3 class="card-title">سیروپ وانیل نمونه</h3>
+<p class="card-desc">حجم و توضیحات محصول را وارد کنید.</p>
+<div class="card-price">۱۵۰,۰۰۰ تومان</div>
+<button class="add-cart-btn" data-name="سیروپ وانیل نمونه" data-price="150000">افزودن به سبد خرید 🛒</button>
+</div>
+</article>
+
+<article class="card">
+<div class="card-img"><span class="placeholder-text">عکس سیروپ ۲</span></div>
+<div class="card-content">
+<h3 class="card-title">سیروپ کارامل نمونه</h3>
+<p class="card-desc">حجم و توضیحات محصول را وارد کنید.</p>
+<div class="card-price">۱۶۰,۰۰۰ تومان</div>
+<button class="add-cart-btn" data-name="سیروپ کارامل نمونه" data-price="160000">افزودن به سبد خرید 🛒</button>
+</div>
+</article>
+
+</div>
+</section>
+
+<!-- سبد خرید -->
+<section class="cart-section" id="cart">
+<h2>🛒 سبد خرید وال</h2>
+<p>تعداد محصولات: <span class="cart-count" id="cart-count">۰</span></p>
+
+<div id="cart-items">
+<p>سبد خرید شما خالی است.</p>
+</div>
+
+<div class="cart-total">
+مبلغ کل: <span id="cart-total">۰</span> تومان
+</div>
+
+<button class="whatsapp-order" id="whatsapp-order">
+ثبت سفارش از طریق واتساپ
+</button>
+</section>
+
+</main>
+
+<!-- ارتباط با ما -->
+<section class="contact-section" id="contact">
+<div class="container">
+<div class="section-title">
+<h2>راه ارتباطی با ما</h2>
+<p>جهت استعلام موجودی و سفارش عمده در خدمت شما هستیم.</p>
+</div>
+
+<div class="contact-grid">
+
+<div class="contact-card">
+<h3>📱 اینستاگرام وال</h3>
+<p>برای مشاهده محصولات و ثبت سفارش:</p>
+<a class="insta-link" href="https://instagram.com/Val.zarand" target="_blank" rel="noopener">@Val.zarand</a>
+</div>
+
+<div class="contact-card">
+<h3>📍 آدرس فروشگاه</h3>
+<p>زرند، خیابان فردوس، نبش کوچه ۲۶</p>
+</div>
+
+<div class="contact-card">
+<h3>🏭 انبار و دفتر فروش عمده</h3>
+<p>شهرک صنعتی شماره ۳</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<footer>
+<p>© تمامی حقوق برای مجموعه قهوه و تجهیزات وال محفوظ است.</p>
+</footer>
+
+<script>
+const whatsappNumber = "989935533452";
+let cart = [];
+
+function formatPrice(number) {
+  return Number(number).toLocaleString("fa-IR");
+}
+
+function addToCart(name, price) {
+  const existing = cart.find(item => item.name === name);
+
+  if (existing) {
+    existing.quantity++;
+  } else {
+    cart.push({
+      name: name,
+      price: Number(price),
+      quantity: 1
+    });
+  }
+
+  renderCart();
+}
+
+function changeQuantity(index, amount) {
+  cart[index].quantity += amount;
+
+  if (cart[index].quantity <= 0) {
+    cart.splice(index, 1);
+  }
+
+  renderCart();
+}
+
+function removeItem(index) {
+  cart.splice(index, 1);
+  renderCart();
+}
+
+function renderCart() {
+  const container = document.getElementById("cart-items");
+  const totalElement = document.getElementById("cart-total");
+  const countElement = document.getElementById("cart-count");
+
+  container.innerHTML = "";
+
+  if (cart.length === 0) {
+    container.textContent = "سبد خرید شما خالی است.";
+    totalElement.textContent = "۰";
+    countElement.textContent = "۰";
+    return;
+  }
+
+  let total = 0;
+  let count = 0;
+
+  cart.forEach((item, index) => {
+    total += item.price * item.quantity;
+    count += item.quantity;
+
+    const row = document.createElement("div");
+    row.className = "cart-item";
+
+    const info = document.createElement("div");
+
+    const name = document.createElement("strong");
+    name.textContent = item.name;
+
+    const price = document.createElement("p");
+    price.textContent = formatPrice(item.price) + " تومان";
+
+    const quantity = document.createElement("p");
+    quantity.textContent = "تعداد: " + formatPrice(item.quantity);
+
+    info.append(name, price, quantity);
+
+    const controls = document.createElement("div");
+
+    const minus = document.createElement("button");
+    minus.textContent = "−";
+    minus.onclick = () => changeQuantity(index, -1);
+
+    const plus = document.createElement("button");
+    plus.textContent = "+";
+    plus.onclick = () => changeQuantity(index, 1);
+
+    const remove = document.createElement("button");
+    remove.textContent = "حذف";
+    remove.className = "delete-btn";
+    remove.onclick = () => removeItem(index);
+
+    controls.append(minus, plus, remove);
+    row.append(info, controls);
+    container.appendChild(row);
+  });
+
+  totalElement.textContent = formatPrice(total);
+  countElement.textContent = formatPrice(count);
+}
+
+document.querySelectorAll(".add-cart-btn").forEach(button => {
+  button.addEventListener("click", () => {
+    addToCart(
+      button.dataset.name,
+      button.dataset.price
+    );
+
+    document.getElementById("cart").scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  });
+});
+
+document.getElementById("whatsapp-order")
+.addEventListener("click", function() {
+
+  if (cart.length === 0) {
+    alert("سبد خرید شما خالی است!");
+    return;
+  }
+
+  let total = 0;
+
+  let message =
+    "سلام، سفارش جدید از فروشگاه وال دارم 🌿\n\n";
+
+  message += "🛒 فهرست محصولات:\n\n";
+
+  cart.forEach((item, index) => {
+    const subtotal = item.price * item.quantity;
+    total += subtotal;
+
+    message +=
+      (index + 1) + ". " + item.name + "\n" +
+      "تعداد: " + item.quantity + "\n" +
+      "قیمت: " + formatPrice(subtotal) + " تومان\n\n";
+  });
+
+  message +=
+    "💰 مبلغ کل: " + formatPrice(total) + " تومان\n\n";
+
+  message +=
+    "لطفاً برای هماهنگی و ثبت نهایی سفارش راهنمایی بفرمایید.";
+
+  const url =
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    encodeURIComponent(message);
+
+  window.location.href = url;
+});
+
+renderCart();
+</script>
+
+</body>
+</html>
